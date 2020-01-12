@@ -2,7 +2,7 @@ cat("\014")
 # code4policy
 
 # CHANGE DIRECTORY HERE
-setwd("C:/Users/HP/Dropbox/code4policy_data")
+setwd("")
 # As we are not allowed to make the data public, we keep the data
 # on a private Dropbox
 
