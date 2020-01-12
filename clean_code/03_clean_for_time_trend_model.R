@@ -25,11 +25,11 @@ df06<-df06%>%rename(hinctnta=hinctnt)
 df04<-df04%>%rename(hinctnta=hinctnt)
 
 # creating a year variable and selecting demographic variables
-df18<-df18%>% mutate(year=2018)%>%select(c(year,vote,hinctnta,agea,eduade2,domicil,rlgdgr,brncntr,facntr,mocntr))
-df14<-df14%>% mutate(year=2014)%>%select(c(year,vote,hinctnta,agea,eduade2,domicil,rlgdgr,brncntr,facntr,mocntr))
-df10<-df10%>% mutate(year=2010)%>%select(c(year,vote,hinctnta,agea,eduade2,domicil,rlgdgr,brncntr,facntr,mocntr))
-df06<-df06%>% mutate(year=2006)%>%select(c(year,vote,hinctnta,agea,eduade2,domicil,rlgdgr,brncntr,facntr,mocntr))
-df04<-df04%>% mutate(year=2004)%>%select(c(year,vote,hinctnta,agea,eduade2,domicil,rlgdgr,brncntr,facntr,mocntr))
+df18<-df18%>% mutate(year=2018)%>%select(c(year,vote,hinctnta,agea,eduade2,domicil,rlgdgr,brncntr,facntr,mocntr,dweight))
+df14<-df14%>% mutate(year=2014)%>%select(c(year,vote,hinctnta,agea,eduade2,domicil,rlgdgr,brncntr,facntr,mocntr,dweight))
+df10<-df10%>% mutate(year=2010)%>%select(c(year,vote,hinctnta,agea,eduade2,domicil,rlgdgr,brncntr,facntr,mocntr,dweight))
+df06<-df06%>% mutate(year=2006)%>%select(c(year,vote,hinctnta,agea,eduade2,domicil,rlgdgr,brncntr,facntr,mocntr,dweight))
+df04<-df04%>% mutate(year=2004)%>%select(c(year,vote,hinctnta,agea,eduade2,domicil,rlgdgr,brncntr,facntr,mocntr,dweight))
 
 #appending dataset
 time_trend_data<-bind_rows(df18,df14,df10,df06,df04)
