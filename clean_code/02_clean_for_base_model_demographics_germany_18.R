@@ -143,6 +143,9 @@ df <- read.dta("raw_data/18_germany.dta")
   # demographic (d) variablies to keep for regression (r)
   df_d_r <- df_d %>%
     select(right_wing_voter, is_male, income_above_median, above_35_yrs, attended_college, lives_village, religious, migration_background, married, dweight)
+  
+  # summary stats
+  summary(df_d_r)
     
   # save data
   write.csv(df_d_r, file = "clean_data/18_germany_demographics.csv",row.names=FALSE)
