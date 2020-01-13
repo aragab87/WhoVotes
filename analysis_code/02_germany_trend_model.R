@@ -31,7 +31,7 @@ share_of_educated_voters%>%
   ggplot(aes(y = share_of_educated_voters,x=year))+
   geom_point(colour="red",
              size=2 )+
-  geom_smooth(color="navy", size=0.8)+
+  geom_line(color="navy", size=0.8)+
   labs(y="Share of College Educated Voters", x = "Years" , caption ="Source: European Social Survey")+
   scale_x_continuous(breaks = c(2010,2014,2018), limits = c(2010,2018) )+
   theme_minimal()
@@ -51,7 +51,7 @@ share_of_voters_mig%>%
   ggplot(aes(y = share_of_mig_voters,x=year))+
   geom_point(colour="red",
              size=2 )+
-  geom_smooth(color="navy", size=0.8)+
+  geom_line(color="navy", size=0.8)+
   labs(y="Share of Migrant Voters", x = "Years" , caption ="Source: European Social Survey")+
   scale_x_continuous(breaks = c(2004,2006,2010,2014,2018))+
   theme_minimal()
@@ -71,7 +71,7 @@ share_of_voters_ismale%>%
   ggplot(aes(y = share_of_male_voters,x=year))+
   geom_point(colour="red",
              size=2 )+
-  geom_smooth(color="navy", size=0.8)+
+  geom_line(color="navy", size=0.8)+
   labs(y="Share of Male Voters", x = "Years" , caption ="Source: European Social Survey")+
   scale_x_continuous(breaks = c(2004,2006,2010,2014,2018))+
   theme_minimal()
@@ -91,7 +91,7 @@ share_of_voters_relig%>%
   ggplot(aes(y = share_of_relig_voters,x=year))+
   geom_point(colour="red",
              size=2 )+
-  geom_smooth(color="navy", size=0.8)+
+  geom_line(color="navy", size=0.8)+
   labs(y="Share of Religious Voters", x = "Years" , caption ="Source: European Social Survey")+
   scale_x_continuous(breaks = c(2004,2006,2010,2014,2018))+
   theme_minimal()
@@ -111,7 +111,7 @@ share_of_voters_above35%>%
   ggplot(aes(y = share_of_above35_voters,x=year))+
   geom_point(colour="red",
              size=2 )+
-  geom_smooth(color="navy", size=0.8)+
+  geom_line(color="navy", size=0.8)+
   labs(y="Share of Voters Above35", x = "Years" , caption ="Source: European Social Survey")+
   scale_x_continuous(breaks = c(2004,2006,2010,2014,2018))+
   theme_minimal()
