@@ -3,7 +3,7 @@ var margin = {top: 80, right: 80, bottom: 30, left: 80},
     width = 660 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var formatPercent = d3.format(".0%");
+var formatPercent = d3.format(".0");
 
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
@@ -25,7 +25,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<strong> Holding all other characteristics constant, <BR/>  </strong> <span style='color:red'>" + d.text_description + "</span> <strong> <BR/> increases the chance of someone voting  <BR/> for a right-wing populist party by <BR/> </strong> <span style='color:red'>" + d.coefficient + "</span>";
+    return "<span style='color:red'>" + d.text_description + "</span> <strong> <BR/> increases the chance of someone voting  <BR/> for a right-wing populist party by <BR/> </strong> <span style='color:red'>" + d.coefficient_percent + "</span>";
   })
 
 var svg = d3.select("body").append("svg")
@@ -49,8 +49,8 @@ d3.csv("data-model.csv", type, function(error, data) {
       .attr("class", "y axis")
       .call(yAxis)
     .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
+      .attr("transform", "rotate(0)")
+      .attr("y", 8)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
       .text("coefficient");
