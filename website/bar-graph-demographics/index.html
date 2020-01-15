@@ -11,17 +11,18 @@
 </head>
 <body>
 
-  <h1 id="bar-chart-title"> Determinants of Right Wing Populist Vote </h1>
+  <h1 class ="bar-chart-demographics"> Determinants of Right Wing Populist Vote </h1>
 
-  <h2 id="bar-chart-subtitle"> Among voters who share all other characteristics, <BR/>
-    not having gone to college is the strongest predictor of voting for the AfD
+  <h2 class ="bar-chart-demographics"> Having only a high school degree or lower is the strongest predictor of voting for the AfD
   </h2> 
 
-  <div id="bar-chart-container"> 
+  <div id ="bar-chart-container"> 
 
   </div>
 
-  <p id="bar-chart-caption"> Predictors were estimated in an OLS regression using a representative sample of 1860 voters.  <BR/> Sampling weight were applied as per the survey documentation.  <BR/> Data source: X. Cleaning and analysis code available here. </p>
+  <p class="bar-chart-demographics"> Predictors were estimated in an OLS regression using a representative sample of 1860 voters. A correction interpretation of these results would be to say that, for example, being male is correlated with a 3.8 percentage points higher probability in voting for the AfD holding all other demographic characteristics equal.
+  <BR/> Migration background is defined as being born outside Germany or having at least one parent born outside Germany.
+  <BR/> Robustness checks using logit transformations yielded qualitatively the same results. <BR/> Sampling weights were applied as per the survey documentation.  <BR/> Data source: X. Cleaning and analysis code available here. </p>
 
 
   <script src="http://d3js.org/d3.v3.min.js"></script>

@@ -1,5 +1,5 @@
 
-var margin = {top: 80, right: 80, bottom: 30, left: 80},
+var margin = {top: 40, right: 80, bottom: 85, left: 80},
     width = 660 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -25,7 +25,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<span style='color:red'>" + d.text_description + "</span> <strong> <BR/> increases the chance of someone <BR/> voting for the AfD by <BR/> </strong> <span style='color:red'>" + d.coefficient_percent + "</span> <strong> percentage points </strong> ";
+    return "<span style='color:red'>" + d.text_description + "</span> <strong> <BR/> increases the chance of voting for <BR/> the AfD by </strong> <span style='color:red'>" + d.coefficient_percent + "</span> <strong> percentage points </strong> ";
   })
 
 var svg = d3.select("#bar-chart-container").append("svg")
@@ -46,7 +46,7 @@ svg.append("text")
     .attr("y", -20)
     .attr("fill", "currentColor")
     .attr("text-anchor", "start")
-    .text("Increase in AfD vote share");
+    .text("Increase in the chance of voting for the AfD");
 
 svg.append("text")
     .attr("x", -margin.left)
@@ -55,11 +55,15 @@ svg.append("text")
     .attr("text-anchor", "start")
     .text("(in percentage points)");
 
-/* old stuff starts here */
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+      .call(xAxis)
+      .selectAll("text")  
+          .style("text-anchor", "end")
+          .attr("dx", "-.8em")
+          .attr("dy", ".15em")
+          .attr("transform", "rotate(-40)" );
 
 
   svg.append("g")
