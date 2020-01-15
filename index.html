@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">The Banner</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">The German Right Wing Voter</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Under-reporting and data constraints</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Data</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact Us</a>
+  </div>
+</div>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:10px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">The Rise of the Far-Right</h1>
+      <p>Far-right parties have been increasing their vote share and gaining power across Western Europe</p>
+      <ul>
+  		<li>New parties founded or old ones gaining in strength</li>
+  		<li>Parties joining federal or regional governments</li>
+  		<li>In France making it to the second stage in voting for president</li>
+	</ul>
+    <iframe title="Rise of Right Wing Populism in Europe" aria-label="Europe choropleth map" id="datawrapper-chart-MKWKS" src="//datawrapper.dwcdn.net/MKWKS/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="523"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();</script>
+    </div>
+  
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Germany seemed resilient to this trend till the 2010s </h1>
+      <ul>
+  		<li>Germany’s history with fascism, WWII and the holocaust led many to think it was resilient to such tendencies</li>
+  		<li>There were populist parties, particularly in regional elections and the far-right NPD would field candidates but never got close to crossing the national threshold of 5%</li>
+  		<li>Strong anti-immigrant, anti-establishment message </li>
+        <li>2017 became third largest party and largest opposition party </li>
+	</ul>
+    </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"> The AFD’s voter has fewer years of formal education, is more likely to live in the former GDR and …</h1>
+      <ul>
+  		<li>Analysis of 2017 national parliamentary election voters yields the following (summary of findings)</li>
+  		<li>Add Economist Visual Here</li>
+	</ul>
+    </div>
+    
+   <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"> Education as the new class</h1>
+      <ul>
+  		<li>Education seems to be the strongest predictor both of voting for the far-right as well as the party that is increasingly positioning itself as their anti-thesis, the Greens</li>
+  		<li>Blue-collar men whose education stopped at a pre-college level are more likely to support the nationalist populists</li>
+        <li>Argument on the rise of education as a new cleavage that separates people by income, values, type of jobs, whom they interact with, their social circles and where they live </li>
+        <li>Increasing share of voter with higher education and expansion of higher education in the West gives hope that populist anti-immigrant sentiments might recede </li>
+	</ul>
+    <iframe title="Voter Composition Over time in Germany" aria-label="Interactive line chart" id="datawrapper-chart-pSLRo" src="//datawrapper.dwcdn.net/pSLRo/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 60% !important; border: none;" height="635"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();</script>
+    </div>
+    
+<!-- END MAIN -->
+</div>
+
+</body>
+</html>
