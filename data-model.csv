@@ -1,0 +1,9 @@
+﻿factor,coefficient,coefficient_percent,text_description
+"Education",5.4874086,5.5,"Not having attended college"
+"Migration background",5.3336289,5.3,"Having a migration background"
+"Religion",4.0794098,4.1,"Considering onself non-religious"
+"Gender",3.8092033,3.8,"Being male"
+"Age",3.0312739,3.0,"Being older than 35 years"
+"Income",0.9973518,1.0,"Having a below median income"
+"Marital status",0.4730517,0.5,"Not being married"
+"Urban/rural",0.1336028,0.1,"Living in a city"
