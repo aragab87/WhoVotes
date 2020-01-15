@@ -10,7 +10,7 @@ library(tidyverse)
 library(haven)
 library(readr)
 library(ggthemes)
-
+library(scales)
 
 # input Stata file
 df<- read_csv("germany_timetrend.csv")
@@ -123,6 +123,12 @@ a<-merge(share_of_voters_above35,share_of_educated_voters, by="year")
 a<-merge(a,share_of_voters_mig,by="year")
 a<-merge(a,share_of_voters_ismale,by="year")
 data<-merge(a,share_of_voters_relig,by="year")
+data<-data%>%
+  mutate(share_of_educated_voters=share_of_educated_voters*100,
+         share_of_above35_voters=share_of_above35_voters*100,
+         share_of_mig_voters=share_of_mig_voters*100,
+         share_of_male_voters=share_of_male_voters*100,
+         share_of_relig_voters=share_of_relig_voters*100)
 write_csv(data,path="C:/Users/HP/Dropbox/code4policy_data/clean_data/germany_timetrend_graphs_data_wide.csv")
 
 
@@ -145,7 +151,7 @@ data%>%
                                 "seagreen",
                                 "darkorange"))+
   scale_x_continuous(breaks = c(2002,2005,2009,2013,2017))+
-  scale_y_continuous(breaks = seq(0,0.85,0.05))+
+  scale_y_continuous(breaks = seq(0,85,5))+
   theme_minimal()
 
 
