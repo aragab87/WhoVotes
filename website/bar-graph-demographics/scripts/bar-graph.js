@@ -1,5 +1,5 @@
 
-var margin = {top: 40, right: 20, bottom: 30, left: 40},
+var margin = {top: 80, right: 80, bottom: 30, left: 80},
     width = 660 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -18,13 +18,14 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
-    .tickFormat(formatPercent);
+    .tickFormat(formatPercent)
+    .ticks(5);
 
 var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<strong>coefficient:</strong> <span style='color:red'>" + d.coefficient + "</span>";
+    return "<span style='color:red'>" + d.text_description + "</span> <strong> <BR/> increases the chance of someone voting  <BR/> for a right-wing populist party by <BR/> </strong> <span style='color:red'>" + d.coefficient + "</span>";
   })
 
 var svg = d3.select("body").append("svg")

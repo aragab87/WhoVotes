@@ -1,9 +1,9 @@
-﻿factor,coefficient
-"Not having attended college",0.054874086
-"Having a migration background",0.053336289
-"Considering onself non-religious",0.040794098
-"Being male",0.038092033
-"Being older than 35 yrs",0.030312739
-"Having an income below median",0.009973518
-"Not being married",0.004730517
-"Living in a city",0.001336028
+﻿factor,coefficient, text_description
+"University \r\n education",0.054874086, "Not having attended college"
+"Having a migration background",0.053336289, "Not having attended college"
+"Considering onself non-religious",0.040794098,"Not having attended college"
+"Being male",0.038092033, "Not having attended college"
+"Being older <BR/> than 35 yrs",0.030312739, "Not having attended college"
+"Having an income below median",0.009973518, "Not having attended college"
+"Not being married",0.004730517, "Not having attended college"
+"Living in a city",0.001336028, "Not having attended college"
