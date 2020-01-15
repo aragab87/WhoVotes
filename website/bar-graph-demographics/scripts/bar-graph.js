@@ -25,7 +25,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<span style='color:red'>" + d.text_description + "</span> <strong> <BR/> increases the chance of someone voting  <BR/> for a right-wing populist party by <BR/> </strong> <span style='color:red'>" + d.coefficient + "</span>";
+    return "<strong> Holding all other characteristics constant, <BR/>  </strong> <span style='color:red'>" + d.text_description + "</span> <strong> <BR/> increases the chance of someone voting  <BR/> for a right-wing populist party by <BR/> </strong> <span style='color:red'>" + d.coefficient + "</span>";
   })
 
 var svg = d3.select("body").append("svg")
