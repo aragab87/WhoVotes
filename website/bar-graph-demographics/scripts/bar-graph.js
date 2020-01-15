@@ -19,16 +19,16 @@ var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
     .tickFormat(formatPercent)
-    .ticks(5);
+    .ticks(5)
 
 var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<span style='color:red'>" + d.text_description + "</span> <strong> <BR/> increases the chance of someone voting  <BR/> for a right-wing populist party by <BR/> </strong> <span style='color:red'>" + d.coefficient_percent + "</span>";
+    return "<span style='color:red'>" + d.text_description + "</span> <strong> <BR/> increases the chance of someone <BR/> voting for the AfD by <BR/> </strong> <span style='color:red'>" + d.coefficient_percent + "</span> <strong> percentage points </strong> ";
   })
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#bar-chart-container").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -40,10 +40,27 @@ d3.csv("data-model.csv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.factor; }));
   y.domain([0, d3.max(data, function(d) { return d.coefficient; })]);
 
+
+svg.append("text")
+    .attr("x", -margin.left)
+    .attr("y", -20)
+    .attr("fill", "currentColor")
+    .attr("text-anchor", "start")
+    .text("Increase in AfD vote share");
+
+svg.append("text")
+    .attr("x", -margin.left)
+    .attr("y", -10)
+    .attr("fill", "currentColor")
+    .attr("text-anchor", "start")
+    .text("(in percentage points)");
+
+/* old stuff starts here */
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
+
 
   svg.append("g")
       .attr("class", "y axis")
@@ -53,7 +70,7 @@ d3.csv("data-model.csv", type, function(error, data) {
       .attr("y", 8)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("coefficient");
+      .text("");
 
   svg.selectAll(".bar")
       .data(data)

@@ -1,6 +1,6 @@
 
 body {
-  font: 10px sans-serif;
+  font: 11px sans-serif;
 }
 
 .axis path,
@@ -25,10 +25,12 @@ body {
 .d3-tip {
   line-height: 1;
   font-weight: bold;
-  padding: 12px;
+  padding: 13px;
+  font-size: 13px;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   border-radius: 2px;
+  text-align: center;
 }
 
 /* Creates a small triangle extender for the tooltip */
