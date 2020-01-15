@@ -33,10 +33,10 @@ share_of_educated_voters%>%
              size=2 )+
   geom_line(color="navy", size=0.8)+
   labs(y="Share of College Educated Voters", x = "Years" , caption ="Source: European Social Survey")+
-  scale_x_continuous(breaks = c(2010,2014,2018), limits = c(2010,2018) )+
+  scale_x_continuous(breaks = c(2009,2013,2017), limits = c(2009,2017) )+
   theme_minimal()
 
-ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_educated_voters.pdf", width =7.7, height =4,dpi = 120)
+ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_educated_voters.jpg", width =4, height =7.7,dpi = 120)
 
 
 #Share of migrant voters over time
@@ -53,10 +53,10 @@ share_of_voters_mig%>%
              size=2 )+
   geom_line(color="navy", size=0.8)+
   labs(y="Share of Migrant Voters", x = "Years" , caption ="Source: European Social Survey")+
-  scale_x_continuous(breaks = c(2004,2006,2010,2014,2018))+
+  scale_x_continuous(breaks = c(2002,2005,2009,2013,2017))+
   theme_minimal()
 
-ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_mig_voters.pdf", width =7.7, height =4,dpi = 120)
+ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_mig_voters.jpg", width =7.7, height =4,dpi = 120)
 
 
 #Share of male voters over time
@@ -73,10 +73,10 @@ share_of_voters_ismale%>%
              size=2 )+
   geom_line(color="navy", size=0.8)+
   labs(y="Share of Male Voters", x = "Years" , caption ="Source: European Social Survey")+
-  scale_x_continuous(breaks = c(2004,2006,2010,2014,2018))+
+  scale_x_continuous(breaks = c(2002,2005,2009,2013,2017))+
   theme_minimal()
 
-ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_male_voters.pdf", width =7.7, height =4,dpi = 120)
+ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_male_voters.jpg", width =7.7, height =4,dpi = 120)
 
 
 #Share of religious voters over time
@@ -93,10 +93,10 @@ share_of_voters_relig%>%
              size=2 )+
   geom_line(color="navy", size=0.8)+
   labs(y="Share of Religious Voters", x = "Years" , caption ="Source: European Social Survey")+
-  scale_x_continuous(breaks = c(2004,2006,2010,2014,2018))+
+  scale_x_continuous(breaks = c(2002,2005,2009,2013,2017))+
   theme_minimal()
 
-ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_religious_voters.pdf", width =7.7, height =4,dpi = 120)
+ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_religious_voters.jpg", width =7.7, height =4,dpi = 120)
 
 
 #Share of voters above 35 over time
@@ -113,16 +113,18 @@ share_of_voters_above35%>%
              size=2 )+
   geom_line(color="navy", size=0.8)+
   labs(y="Share of Voters Above35", x = "Years" , caption ="Source: European Social Survey")+
-  scale_x_continuous(breaks = c(2004,2006,2010,2014,2018))+
+  scale_x_continuous(breaks = c(2002,2005,2009,2013,2017))+
   theme_minimal()
 
-ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_above35_voters.pdf", width =7.7, height =4,dpi = 120)
+ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_above35_voters.jpg", width =7.7, height =4,dpi = 120)
 
 #Combining all 
 a<-merge(share_of_voters_above35,share_of_educated_voters, by="year")
 a<-merge(a,share_of_voters_mig,by="year")
 a<-merge(a,share_of_voters_ismale,by="year")
 data<-merge(a,share_of_voters_relig,by="year")
+write_csv(data,path="C:/Users/HP/Dropbox/code4policy_data/clean_data/germany_timetrend_graphs_data_wide.csv")
+
 
 data<-pivot_longer(data, cols = -c(year))
 write_csv(data,path="C:/Users/HP/Dropbox/code4policy_data/clean_data/germany_timetrend_graphs_data.csv")
@@ -142,12 +144,12 @@ data%>%
                                 "blueviolet",
                                 "seagreen",
                                 "darkorange"))+
-  scale_x_continuous(breaks = c(2004,2006,2010,2014,2018))+
+  scale_x_continuous(breaks = c(2002,2005,2009,2013,2017))+
   scale_y_continuous(breaks = seq(0,0.85,0.05))+
   theme_minimal()
 
 
-ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_voters_combined.pdf", width =6, height =6,dpi = 120)
+ggsave("C:/Users/HP/Google Drive/1. Work/github/WhoVotes/output/share_of_voters_combined.jpg", width =6, height =6,dpi = 120)
 
 
 
