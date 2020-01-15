@@ -1,8 +1,9 @@
-﻿is_male;0.038092033
-income_below_median;0.009973518
-above_35_yrs;0.030312739
-not_attended_college;0.054874086
-lives_city;0.001336028
-not_religious;0.040794098
-migration_background;0.053336289
-not_married;0.004730517
+﻿letter,frequency
+"Not having attended college",0.054874086
+"Having a migration background",0.053336289
+"Considering onself non-religious",0.040794098
+"Being male",0.038092033
+"Being older than 35 yrs",0.030312739
+"Having an income below median",0.009973518
+"Not being married",0.004730517
+"Living in a city",0.001336028
