@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>W3.CSS Template</title>
+<title>WhoVotes</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -15,16 +15,12 @@
 <div class="w3-top">
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-theme-l1">The Banner</a>
+    <a href="#" class="w3-bar-item w3-theme-l1">WhoVotes</a>
     <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">The German Right Wing Voter</a>
-    <a href="underreporting.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Under-reporting and data constraints</a>
     <a href="data.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Data</a>
     <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact Us</a>
   </div>
 </div>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:10px">
@@ -50,6 +46,7 @@
   		<li>Strong anti-immigrant, anti-establishment message </li>
         <li>2017 became third largest party and largest opposition party </li>
 	</ul>
+	<iframe title="Alternative for Germany (AfD) Federal and European Election Results&amp;nbsp;" aria-label="Table" id="datawrapper-chart-TWoSa" src="//datawrapper.dwcdn.net/TWoSa/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="352"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();</script>
     </div>
 
   <div class="w3-row w3-padding-64">
@@ -57,6 +54,8 @@
       <h1 class="w3-text-teal"> Determinants of Right Wing Populist Vote </h1>
       <h2 class ="bar-chart-demographics"> Having only a high school degree or lower is the strongest predictor of voting for the AfD
       </h2> 
+      <iframe title="Alternative For Germany (AfD) State Election Results&amp;nbsp;" aria-label="Table" id="datawrapper-chart-cFFg8" src="//datawrapper.dwcdn.net/cFFg8/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="781"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();</script>
+
       <div id ="bar-chart-container"> </div>
       <p id="bar-chart-caption"> Predictors were estimated in an OLS regression using a representative sample of 1860 voters. A correction interpretation of these results would be to say that, for example, being male is correlated with a 3.8 percentage points higher probability in voting for the AfD holding all other demographic characteristics equal. Migration background is defined as being born outside Germany or having at least one parent born outside Germany. Robustness checks using logit transformations yielded qualitatively the same results. Sampling weights were applied as per the survey documentation.  <BR/> Data source: X. Cleaning and analysis code available here. </p>
 
