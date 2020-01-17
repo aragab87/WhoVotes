@@ -85,7 +85,11 @@ function showZeroIfNegative(x)
     }
     return x;
 }
-      
+
+
+var f = d3.format(".1f");
+
+
 function calculateTotal()
 {
     //Here we get the total price by calling our function
@@ -108,7 +112,7 @@ function calculateTotal()
     //display the result
     var divobj = document.getElementById('totalPriceFooter');
     divobj.style.display='block';
-    divobj.innerHTML = "Your chance of reporting to vote for the AfD is " +cakePrice + "%";
+    divobj.innerHTML = "Your chance of reporting to vote for the AfD is " + d3.format(".2")(cakePrice) + "%";
 
 }
 

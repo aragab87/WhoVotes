@@ -11,6 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+    <!--- source footer: https://www.w3schools.com/howto/howto_css_fixed_footer.asp
+           source calulcator http://javascript-coder.com/javascript-form/javascript-calculator-script.phtml ---->
+
 </head>
 <body onload='hideTotal()'>
     <div id="wrap">
@@ -19,7 +22,6 @@
         <div>
             <div class="cont_order">
                <fieldset>
-                <legend>Let us predict whether you are voting for the AfD!</legend>
 
                 <label >What is your gender?</label>
                 <label class='radiolabel'><input type="radio"  name="gender" value="male" onclick="calculateTotal()" />Male</label><br/>
@@ -46,8 +48,8 @@
                 <label class='radiolabel'><input type="radio"  name="migration" value="migration_no" onclick="calculateTotal()" />No</label><br/>                
 
                 <label >What best describes the area where you live?</label>
-                <label class='radiolabel'><input type="radio"  name="city" value="city_yes" onclick="calculateTotal()" />In a big city or suburb of a big city</label><br/>
-                <label class='radiolabel'><input type="radio"  name="city" value="city_no" onclick="calculateTotal()" />In a small city, town or village</label><br/> 
+                <label class='radiolabel'><input type="radio"  name="city" value="city_yes" onclick="calculateTotal()" /> Big city or suburb of a big city</label><br/>
+                <label class='radiolabel'><input type="radio"  name="city" value="city_no" onclick="calculateTotal()" /> Small city, town or village</label><br/> 
 
 
                 <label >What is more likely to be true about your net income?</label>
@@ -56,23 +58,20 @@
 
                 <br/>
 
-
-                <div id="totalPrice"></div>  
-
                 </fieldset>
             </div>
         </div>  
        </form>
 
-
-
 	</div><!--End of wrap-->
 
-
         <div class="footer" id="footerbox">
-            <p>Text hello</p>
+            <div id="WelcomeTextFooter"> <p>Let us predict whether you are voting for the AfD!</p> </div>
             <div id="totalPriceFooter"></div>
         </div>
+
+    <script src="https://d3js.org/d3-format.v1.min.js"></script>
+<script>
 
 </body>
 </html>
