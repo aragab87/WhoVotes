@@ -8,25 +8,34 @@
 </head>
 <body onload='hideTotal()'>
     <div id="wrap">
+
+
         <form action="" id="cakeform" onsubmit="return false;">
         <div>
             <div class="cont_order">
                <fieldset>
-                <legend>Let us predict your chance of voting for the AfD!</legend>
-                <label >Size Of the Cake</label>
-                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round6" onclick="calculateTotal()" />Round cake 6" -  serves 8 people ($20)</label><br/>
-                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round8" onclick="calculateTotal()" />Round cake 8" - serves 12 people ($25)</label><br/>
-                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round10" onclick="calculateTotal()" />Round cake 10" - serves 16 people($35)</label><br/>
-                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round12" onclick="calculateTotal()" />Round cake 12" - serves 30 people($75)</label><br/>
+                <legend>Let us predict whether you are voting for the AfD!</legend>
+
+                <label >What is your gender?</label>
+                <label class='radiolabel'><input type="radio"  name="gender" value="male" onclick="calculateTotal()" />Male</label><br/>
+                <label class='radiolabel'><input type="radio"  name="gender" value="female" onclick="calculateTotal()" />Female</label><br/>
+
                 <br/>
+
+                <label >What is your age?</label>
+                <label class='radiolabel'><input type="radio"  name="age" value="below" onclick="calculateTotal()" />Below 35 yrs old</label><br/>
+                <label class='radiolabel'><input type="radio"  name="age" value="above" onclick="calculateTotal()" />Above 35 yrs old</label><br/>
+  
                 
                 <div id="totalPrice"></div>
                 
                 </fieldset>
             </div>
-            
         </div>  
        </form>
+
+
+
 	</div><!--End of wrap-->
 
 </body>

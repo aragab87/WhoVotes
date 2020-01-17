@@ -8,11 +8,13 @@ You are free to use the code in Commercial or non-commercial projects
  //Set up an associative array
  //The keys represent the size of the cake
  //The values represent the cost of the cake i.e A 10" cake cost's $35
- var cake_prices = new Array();
- cake_prices["Round6"]=20;
- cake_prices["Round8"]=25;
- cake_prices["Round10"]=35;
- cake_prices["Round12"]=75;
+ var gender_coe = new Array();
+ gender_coe["male"]=20;
+ gender_coe["female"]=25;
+
+ var age_coe = new Array();
+ age_coe["below"]=-20;
+ age_coe["above"]=-25;
  
  //Set up an associative array 
  //The keys represent the filling type
@@ -37,13 +39,13 @@ You are free to use the code in Commercial or non-commercial projects
 	 
 // getCakeSizePrice() finds the price based on the size of the cake.
 // Here, we need to take user's the selection from radio button selection
-function getCakeSizePrice()
+function getCakeSizePrice(cha, coe)
 {  
     var cakeSizePrice=0;
     //Get a reference to the form id="cakeform"
     var theForm = document.forms["cakeform"];
     //Get a reference to the cake the user Chooses name=selectedCake":
-    var selectedCake = theForm.elements["selectedcake"];
+    var selectedCake = theForm.elements[cha];
     //Here since there are 4 radio buttons selectedCake.length = 4
     //We loop through each radio buttons
     for(var i = 0; i < selectedCake.length; i++)
@@ -56,7 +58,7 @@ function getCakeSizePrice()
             //by using the cake_prices array
             //We get the selected Items value
             //For example cake_prices["Round8".value]"
-            cakeSizePrice = cake_prices[selectedCake[i].value];
+            cakeSizePrice = coe[selectedCake[i].value];
             //If we get a match then we break out of this loop
             //No reason to continue if we get a match
             break;
@@ -70,12 +72,12 @@ function calculateTotal()
 {
     //Here we get the total price by calling our function
     //Each function returns a number so by calling them we add the values they return together
-    var cakePrice = getCakeSizePrice();
+    var cakePrice = getCakeSizePrice("gender", gender_coe) + getCakeSizePrice("age", age_coe);
     
     //display the result
     var divobj = document.getElementById('totalPrice');
     divobj.style.display='block';
-    divobj.innerHTML = "Total Price For the Cake $"+cakePrice;
+    divobj.innerHTML = "Your chance of reporting to vote for the AfD is " +cakePrice + "%";
 
 }
 
