@@ -56,7 +56,9 @@
                 <label class='radiolabel'><input type="radio"  name="income" value="top" onclick="calculateTotal()" />My net income is in the top 50% in Germany</label><br/>
                 <label class='radiolabel'><input type="radio"  name="income" value="bottom" onclick="calculateTotal()" />My net income is in the bottom 50% in Germany</label><br/>          
 
-                <br/>
+                <p id="caption-text">
+                    Correlations were estimated in an OLS regression using a representative sample of 1860 voters. Robustness checks using logit transformations yielded qualitatively the same results. Sampling weights were applied as per the survey documentation. <a href="data.html"> Please note, however, that we find evidence of serious underreporting of voting for the AfD.</a> You can find our cleaning code <a href="https://github.com/aragab87/WhoVotes/blob/master/clean_code/02_clean_for_base_model_demographics_germany_18.R">here</a> and analysis code <a href="https://github.com/aragab87/WhoVotes/blob/master/clean_code/02_clean_for_base_model_demographics_germany_18.R">here</a>. <BR/> Data source: <a href="https://www.europeansocialsurvey.org/about/">European Social Survey</a>. 
+                </p>
 
                 </fieldset>
             </div>
