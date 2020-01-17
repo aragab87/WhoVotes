@@ -1,0 +1,10 @@
+For the d3 bar graph visual, 
+I made the following changes in Excel to get 
+from 18_germany_demographics_coefficients_and_average.csv
+to data-model.csv
+
+1) removed the first and last row, containing the outcome variable and intercep
+2) flipped dummy descriptions where necessary so that the coefficients all had a positive sign (e.g., from religious to non-religious)
+3) reorderd based on the absolute size of the coefficients
+4) changed the variable names to the text I want to show below the ticks on the x axis
+5) added a fourth column with the text I want to show up when hovering over bars

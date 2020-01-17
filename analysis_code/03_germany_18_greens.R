@@ -1,9 +1,7 @@
 cat("\014")
 # code4policy
 
-
-  # to do:
-  # add 
+# This script tests if we find flipped results for the Greens, the perceived anti-thesis of the AfD
 
 # CHANGE DIRECTORY HERE
 setwd("/Users/lucaskitzmueller/Dropbox/code4policy_data/")
@@ -35,4 +33,5 @@ df <- read_csv("clean_data/18_germany_demographics_greens.csv")
 # fit model
   base_model <- lm(f, data = df[,0:10], weights = dweight)
   summary(base_model)
+  
   
