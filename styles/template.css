@@ -53,6 +53,11 @@ figure-caption{
     font-style: italic;
 }
 
+z{font-size:15px;
+  font-weight: bold;
+}
+
+
 dfn{
     font-style:italic
 }
