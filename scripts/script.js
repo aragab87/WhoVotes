@@ -1,4 +1,3 @@
-
 var margin = {top: 40, right: 80, bottom: 120, left: 80},
     width = 660 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -25,7 +24,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<span style='color:red'>" + d.text_description + "</span> <strong> <BR/> increases the chance of voting for <BR/> the AfD by </strong> <span style='color:red'>" + d.coefficient_percent + "</span> <strong> percentage points </strong> ";
+    return "<h5> <span style='color:pink'>" + d.text_description + "</span>  <BR/> increases the chance of voting for <BR/> the AfD by <span style='color:pink'>" + d.coefficient_percent + "</span> percentage points </h5> ";
   })
 
 var svg = d3.select("#bar-chart-container").append("svg")
