@@ -65,66 +65,12 @@ function getCakeSizePrice()
     //We return the cakeSizePrice
     return cakeSizePrice;
 }
-
-//This function finds the filling price based on the 
-//drop down selection
-function getFillingPrice()
-{
-    var cakeFillingPrice=0;
-    //Get a reference to the form id="cakeform"
-    var theForm = document.forms["cakeform"];
-    //Get a reference to the select id="filling"
-     var selectedFilling = theForm.elements["filling"];
-     
-    //set cakeFilling Price equal to value user chose
-    //For example filling_prices["Lemon".value] would be equal to 5
-    cakeFillingPrice = filling_prices[selectedFilling.value];
-
-    //finally we return cakeFillingPrice
-    return cakeFillingPrice;
-}
-
-//candlesPrice() finds the candles price based on a check box selection
-function candlesPrice()
-{
-    var candlePrice=0;
-    //Get a reference to the form id="cakeform"
-    var theForm = document.forms["cakeform"];
-    //Get a reference to the checkbox id="includecandles"
-    var includeCandles = theForm.elements["includecandles"];
-
-    //If they checked the box set candlePrice to 5
-    if(includeCandles.checked==true)
-    {
-        candlePrice=5;
-    }
-    //finally we return the candlePrice
-    return candlePrice;
-}
-
-function insciptionPrice()
-{
-    //This local variable will be used to decide whether or not to charge for the inscription
-    //If the user checked the box this value will be 20
-    //otherwise it will remain at 0
-    var inscriptionPrice=0;
-    //Get a refernce to the form id="cakeform"
-    var theForm = document.forms["cakeform"];
-    //Get a reference to the checkbox id="includeinscription"
-    var includeInscription = theForm.elements["includeinscription"];
-    //If they checked the box set inscriptionPrice to 20
-    if(includeInscription.checked==true){
-        inscriptionPrice=20;
-    }
-    //finally we return the inscriptionPrice
-    return inscriptionPrice;
-}
-        
+      
 function calculateTotal()
 {
     //Here we get the total price by calling our function
     //Each function returns a number so by calling them we add the values they return together
-    var cakePrice = getCakeSizePrice() + getFillingPrice() + candlesPrice() + insciptionPrice();
+    var cakePrice = getCakeSizePrice();
     
     //display the result
     var divobj = document.getElementById('totalPrice');
