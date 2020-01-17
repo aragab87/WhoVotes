@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>AfD Voter? </title>
+    <script type="text/javascript" src="scripts/formcalculations.js"></script>
+    <link href="styles/cakeform.css" rel="stylesheet" type="text/css" />
+
+
+    <!---- adding a sticky footer with result  --->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!--- source footer: https://www.w3schools.com/howto/howto_css_fixed_footer.asp
+           source calulcator http://javascript-coder.com/javascript-form/javascript-calculator-script.phtml ---->
+
+</head>
+<body onload='hideTotal()'>
+    <div id="wrap">
+
+        <form action="" id="cakeform" onsubmit="return false;">
+        <div>
+            <div class="cont_order">
+               <fieldset>
+
+                <label >What is your gender?</label>
+                <label class='radiolabel'><input type="radio"  name="gender" value="male" onclick="calculateTotal()" />Male</label><br/>
+                <label class='radiolabel'><input type="radio"  name="gender" value="female" onclick="calculateTotal()" />Female</label><br/>
+
+                <label >What is your age?</label>
+                <label class='radiolabel'><input type="radio"  name="age" value="below" onclick="calculateTotal()" />Below 35 years old</label><br/>
+                <label class='radiolabel'><input type="radio"  name="age" value="above" onclick="calculateTotal()" />Above 35 years old</label><br/>
+  
+                <label >Do you have any university degree?</label>
+                <label class='radiolabel'><input type="radio"  name="college" value="college_yes" onclick="calculateTotal()" />Yes</label><br/>
+                <label class='radiolabel'><input type="radio"  name="college" value="college_no" onclick="calculateTotal()" />No</label><br/>
+  
+                <label >Do you consider yourself religious?</label>
+                <label class='radiolabel'><input type="radio"  name="religion" value="religion_yes" onclick="calculateTotal()" />Yes</label><br/>
+                <label class='radiolabel'><input type="radio"  name="religion" value="religion_no" onclick="calculateTotal()" />No</label><br/>
+
+                <label >Are you married?</label>
+                <label class='radiolabel'><input type="radio"  name="married" value="married_yes" onclick="calculateTotal()" />Yes</label><br/>
+                <label class='radiolabel'><input type="radio"  name="married" value="married_no" onclick="calculateTotal()" />No</label><br/>
+
+                <label >Are you or any of your parents born outside of Germany?</label>
+                <label class='radiolabel'><input type="radio"  name="migration" value="migration_yes" onclick="calculateTotal()" />Yes</label><br/>
+                <label class='radiolabel'><input type="radio"  name="migration" value="migration_no" onclick="calculateTotal()" />No</label><br/>                
+
+                <label >What best describes the area where you live?</label>
+                <label class='radiolabel'><input type="radio"  name="city" value="city_yes" onclick="calculateTotal()" /> Big city or suburb of a big city</label><br/>
+                <label class='radiolabel'><input type="radio"  name="city" value="city_no" onclick="calculateTotal()" /> Small city, town or village</label><br/> 
+
+
+                <label >What is more likely to be true about your net income?</label>
+                <label class='radiolabel'><input type="radio"  name="income" value="top" onclick="calculateTotal()" />My net income is in the top 50% in Germany</label><br/>
+                <label class='radiolabel'><input type="radio"  name="income" value="bottom" onclick="calculateTotal()" />My net income is in the bottom 50% in Germany</label><br/>          
+
+                <br/>
+
+                </fieldset>
+            </div>
+        </div>  
+       </form>
+
+	</div><!--End of wrap-->
+
+        <div class="footer" id="footerbox">
+            <div id="WelcomeTextFooter"> <p>Let us predict whether you are voting for the AfD!</p> </div>
+            <div id="totalPriceFooter"></div>
+        </div>
+
+    <script src="https://d3js.org/d3-format.v1.min.js"></script>
+
+</body>
+</html>
+
+
+
+
+ 
