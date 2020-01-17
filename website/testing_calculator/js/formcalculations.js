@@ -5,6 +5,8 @@ www.gnu.org/licenses/lgpl.html
 You are free to use the code in Commercial or non-commercial projects
 */
 
+
+
  //Set up an associative array
  //The keys represent the size of the cake
  //The values represent the cost of the cake i.e A 10" cake cost's $35
@@ -73,12 +75,22 @@ function getCakeSizePrice(cha, coe)
     //We return the cakeSizePrice
     return cakeSizePrice;
 }
+
+// probabiity below 0 doesn't exist, show zero in that case
+function showZeroIfNegative(x)
+{
+    if(x<0)
+    {
+        x = 0;
+    }
+    return x;
+}
       
 function calculateTotal()
 {
     //Here we get the total price by calling our function
     //Each function returns a number so by calling them we add the values they return together
-    var cakePrice = getCakeSizePrice("gender", gender_coe) 
+    var cakePrice_raw = getCakeSizePrice("gender", gender_coe) 
                     + getCakeSizePrice("age", age_coe) 
                     + getCakeSizePrice("college", college_coe)
                     + getCakeSizePrice("religion", religion_coe)
@@ -86,9 +98,9 @@ function calculateTotal()
                     + getCakeSizePrice("migration", migration_coe)
                     + getCakeSizePrice("city", city_coe)
                     + getCakeSizePrice("income", income_coe)
-
-
                     ;
+
+    var cakePrice = showZeroIfNegative(cakePrice_raw)
     
     //display the result
     var divobj = document.getElementById('totalPrice');
@@ -102,3 +114,4 @@ function hideTotal()
     var divobj = document.getElementById('totalPrice');
     divobj.style.display='none';
 }
+
