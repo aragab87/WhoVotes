@@ -112,7 +112,9 @@ function calculateTotal()
     //display the result
     var divobj = document.getElementById('totalPriceFooter');
     divobj.style.display='block';
-    divobj.innerHTML = "Your chance of reporting to vote for the AfD is " + d3.format(".2")(cakePrice) + "%";
+    divobj.innerHTML = "The likelihood of a voter like you reporting to vote for the AfD is <br/> <span style='font-size: 20px'> <span style='background-color: red'>" + d3.format(".2")(cakePrice) + "%. </span> </span>";
+
+
 
 }
 
