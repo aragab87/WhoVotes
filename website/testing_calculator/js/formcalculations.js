@@ -7,40 +7,40 @@ You are free to use the code in Commercial or non-commercial projects
 
 
 
- //Set up an associative array
- //The keys represent the size of the cake
- //The values represent the cost of the cake i.e A 10" cake cost's $35
- var gender_coe = new Array();
- gender_coe["male"]=20;
- gender_coe["female"]=25;
+//Set up an associative array
+//The keys represent the size of the cake
+//The values represent the cost of the cake i.e A 10" cake cost's $35
+var gender_coe = new Array();
+gender_coe["male"]=3.8;
+gender_coe["female"]=0;
 
- var age_coe = new Array();
- age_coe["below"]=-3;
- age_coe["above"]=3;
+var age_coe = new Array();
+age_coe["below"]=0;
+age_coe["above"]=3.0;
 
- var college_coe = new Array();
- college_coe["college_yes"]=-5.5;
- college_coe["college_no"]=5.5;
- 
- var religion_coe = new Array();
- religion_coe["religion_yes"]=-3.5;
- religion_coe["religion_no"]=3.5;
- 
- var married_coe = new Array();
- married_coe["married_yes"]=-1.5;
- married_coe["married_no"]=3.5;
+var college_coe = new Array();
+college_coe["college_yes"]=-5.5;
+college_coe["college_no"]=0;
 
- var migration_coe = new Array();
- migration_coe["migration_yes"]=1.5;
- migration_coe["migration_no"]=3.5;
+var religion_coe = new Array();
+religion_coe["religion_yes"]=-4.1;
+religion_coe["religion_no"]=0;
 
- var city_coe = new Array();
- city_coe["city_yes"]=1.5;
- city_coe["city_no"]=3.5;
- 
- var income_coe = new Array();
- income_coe["top"]=1.5;
- income_coe["bottom"]=3.5;
+var married_coe = new Array();
+married_coe["married_yes"]=-0.5;
+married_coe["married_no"]=0;
+
+var migration_coe = new Array();
+migration_coe["migration_yes"]=5.3;
+migration_coe["migration_no"]=0;
+
+var city_coe = new Array();
+city_coe["city_yes"]=0;
+city_coe["city_no"]=-0.1;
+
+var income_coe = new Array();
+income_coe["top"]=-1.0;
+income_coe["bottom"]=0;
 
 //NOTE: taking two parameters instead of one here is inefficient as I could
 //      theoretically generate one from the other, but this was faster for me to do
@@ -90,6 +90,8 @@ function calculateTotal()
 {
     //Here we get the total price by calling our function
     //Each function returns a number so by calling them we add the values they return together
+    
+    // summing the coefficients if dummy is 1; also adding intercept
     var cakePrice_raw = getCakeSizePrice("gender", gender_coe) 
                     + getCakeSizePrice("age", age_coe) 
                     + getCakeSizePrice("college", college_coe)
@@ -98,6 +100,7 @@ function calculateTotal()
                     + getCakeSizePrice("migration", migration_coe)
                     + getCakeSizePrice("city", city_coe)
                     + getCakeSizePrice("income", income_coe)
+                    + 5.9
                     ;
 
     var cakePrice = showZeroIfNegative(cakePrice_raw)
@@ -114,4 +117,3 @@ function hideTotal()
     var divobj = document.getElementById('totalPrice');
     divobj.style.display='none';
 }
-
