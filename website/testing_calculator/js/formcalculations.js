@@ -106,7 +106,7 @@ function calculateTotal()
     var cakePrice = showZeroIfNegative(cakePrice_raw)
     
     //display the result
-    var divobj = document.getElementById('totalPrice');
+    var divobj = document.getElementById('totalPriceFooter');
     divobj.style.display='block';
     divobj.innerHTML = "Your chance of reporting to vote for the AfD is " +cakePrice + "%";
 
@@ -114,6 +114,6 @@ function calculateTotal()
 
 function hideTotal()
 {
-    var divobj = document.getElementById('totalPrice');
+    var divobj = document.getElementById('totalPriceFooter');
     divobj.style.display='none';
 }
