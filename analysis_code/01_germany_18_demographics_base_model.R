@@ -1,9 +1,7 @@
 cat("\014")
 # code4policy
 
-
-  # to do:
-  # add 
+# This script estimates the model of voting for the AfD on demographics.
 
 # CHANGE DIRECTORY HERE
 setwd("/Users/lucaskitzmueller/Dropbox/code4policy_data/")
@@ -38,10 +36,13 @@ df <- read_csv("clean_data/18_germany_demographics.csv")
 
   summary(base_model)
   
-# Calculate prediction based on coefficients and averages
-
+# Ouput model into csv
+  # The following code is not efficient as we went through iterations
+  # For example, we first add mean values to the output table and then delete it again
+  # However, it does the job and I think is still understandable
+  
   coeffs <- base_model$coefficients # save coefficients
-
+  
   means <- colMeans(df) # save averages
   means <- means[-length(means)] # remove dweight
   
@@ -51,50 +52,50 @@ df <- read_csv("clean_data/18_germany_demographics.csv")
   means_coeffs <- as_tibble(means_coeffs, rownames = NA)
   # View(means_coeffs)
   
+  # rename columns
+  names(means_coeffs) <- c("average", "coefficient")
+  
+  # multiply with 100 to get percentage points
+  means_coeffs$coefficient <- means_coeffs$coefficient * 100
+  
+  # add a rounded value for displaying in text
+  means_coeffs$coefficient_percent <- round(means_coeffs$coefficient, digits = 1)
+  
+  # Now follows some deactivated code as we decided to not work with averages multiplied with coefficients
+    
   # get rid of outcome variable
-  means_coeffs <- means_coeffs[-1,]
+  # means_coeffs <- means_coeffs[-1,]
   
   # make "avg of intercept" 1
-  means_coeffs[nrow(means_coeffs),1] <- 1
-
+  # eans_coeffs[nrow(means_coeffs),1] <- 1
+  
   # Multiply
-  means_coeffs <- means_coeffs %>% mutate(multiple = V1 * V2)
+  # means_coeffs <- means_coeffs %>% mutate(multiple = V1 * V2)
   
-  # Lower bound
-  means_coeffs$low_bound <- NA
-    
-  for (i in 1:nrow(means_coeffs)) {
-    print(i)
-    before <- (i -1 )
-    after <- (i + 1)
-    print(before)
-    print(after)
-    means_coeffs$low_bound[i] <- sum(means_coeffs[1:before,3],means_coeffs[after:9,3])
-  }
+  # ...
   
-    
+  # At this point I decided to make further changes in Excel
+  # given our user stories
+  # and that means_coeffs is such a small data frame 
+  # and I will not replicate this analysis for other years or countries
   
-
+  write.csv(means_coeffs, file = "~/Development/WhoVotes/output/18_germany_demographics_coefficients_and_average.csv",row.names=TRUE)
   
+# testing a regression tree model
   
-  
-  avgs <- df %>%
-    summarise(mean_attended_college = mean(attended_college),
-              mean_religious = mean(religious)
-              )
-  
-  
-  
-  
-# testing a tree
   library(tree)
   
   df$right_wing_voter <- as.factor(df$right_wing_voter)
   
   tree_model       <- tree(f, 
-                    data = df[,0:10],
-                    weights = dweight)
+                           data = df[,0:10],
+                           weights = dweight)
   summary(tree_model)
   plot(tree_model)
   text(tree_model, pretty = 0)
+  
+# End of Script
+  
+  
+
   
