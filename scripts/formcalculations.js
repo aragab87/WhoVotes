@@ -112,7 +112,7 @@ function calculateTotal()
     //display the result
     var divobj = document.getElementById('totalPriceFooter');
     divobj.style.display='block';
-    divobj.innerHTML = "The likelihood of a voter like you reporting to vote for the AfD is <br/> <span style='font-size: 20px'> <span style='background-color: red'>" + d3.format(".2")(cakePrice) + "%. </span> </span>";
+    divobj.innerHTML = "The likelihood of a voter like you reporting to vote for the AfD is <br/> <span style='font-size: 20px'> <span style='background-color: red'>" + d3.format(".1f")(cakePrice) + "%. </span> </span>";
 
 
 
