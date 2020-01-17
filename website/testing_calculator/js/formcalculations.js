@@ -13,29 +13,35 @@ You are free to use the code in Commercial or non-commercial projects
  gender_coe["female"]=25;
 
  var age_coe = new Array();
- age_coe["below"]=-20;
- age_coe["above"]=-25;
+ age_coe["below"]=-3;
+ age_coe["above"]=3;
+
+ var college_coe = new Array();
+ college_coe["college_yes"]=-5.5;
+ college_coe["college_no"]=5.5;
  
- //Set up an associative array 
- //The keys represent the filling type
- //The value represents the cost of the filling i.e. Lemon filling is $5,Dobash filling is $9
- //We use this this array when the user selects a filling from the form
- var filling_prices= new Array();
- filling_prices["None"]=0;
- filling_prices["Lemon"]=5;
- filling_prices["Custard"]=5;
- filling_prices["Fudge"]=7;
- filling_prices["Mocha"]=8;
- filling_prices["Raspberry"]=10;
- filling_prices["Pineapple"]=5;
- filling_prices["Dobash"]=9;
- filling_prices["Mint"]=5;
- filling_prices["Cherry"]=5;
- filling_prices["Apricot"]=8;
- filling_prices["Buttercream"]=7;
- filling_prices["Chocolate Mousse"]=12;
+ var religion_coe = new Array();
+ religion_coe["religion_yes"]=-3.5;
+ religion_coe["religion_no"]=3.5;
  
-	 
+ var married_coe = new Array();
+ married_coe["married_yes"]=-1.5;
+ married_coe["married_no"]=3.5;
+
+ var migration_coe = new Array();
+ migration_coe["migration_yes"]=1.5;
+ migration_coe["migration_no"]=3.5;
+
+ var city_coe = new Array();
+ city_coe["city_yes"]=1.5;
+ city_coe["city_no"]=3.5;
+ 
+ var income_coe = new Array();
+ income_coe["top"]=1.5;
+ income_coe["bottom"]=3.5;
+
+//NOTE: taking two parameters instead of one here is inefficient as I could
+//      theoretically generate one from the other, but this was faster for me to do
 	 
 // getCakeSizePrice() finds the price based on the size of the cake.
 // Here, we need to take user's the selection from radio button selection
@@ -72,7 +78,17 @@ function calculateTotal()
 {
     //Here we get the total price by calling our function
     //Each function returns a number so by calling them we add the values they return together
-    var cakePrice = getCakeSizePrice("gender", gender_coe) + getCakeSizePrice("age", age_coe);
+    var cakePrice = getCakeSizePrice("gender", gender_coe) 
+                    + getCakeSizePrice("age", age_coe) 
+                    + getCakeSizePrice("college", college_coe)
+                    + getCakeSizePrice("religion", religion_coe)
+                    + getCakeSizePrice("married", married_coe)
+                    + getCakeSizePrice("migration", migration_coe)
+                    + getCakeSizePrice("city", city_coe)
+                    + getCakeSizePrice("income", income_coe)
+
+
+                    ;
     
     //display the result
     var divobj = document.getElementById('totalPrice');

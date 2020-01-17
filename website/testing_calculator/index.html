@@ -20,15 +20,38 @@
                 <label class='radiolabel'><input type="radio"  name="gender" value="male" onclick="calculateTotal()" />Male</label><br/>
                 <label class='radiolabel'><input type="radio"  name="gender" value="female" onclick="calculateTotal()" />Female</label><br/>
 
+                <label >What is your age?</label>
+                <label class='radiolabel'><input type="radio"  name="age" value="below" onclick="calculateTotal()" />Below 35 years old</label><br/>
+                <label class='radiolabel'><input type="radio"  name="age" value="above" onclick="calculateTotal()" />Above 35 years old</label><br/>
+  
+                <label >Do you have any university degree?</label>
+                <label class='radiolabel'><input type="radio"  name="college" value="college_yes" onclick="calculateTotal()" />Yes</label><br/>
+                <label class='radiolabel'><input type="radio"  name="college" value="college_no" onclick="calculateTotal()" />No</label><br/>
+  
+                <label >Do you consider yourself religious?</label>
+                <label class='radiolabel'><input type="radio"  name="religion" value="religion_yes" onclick="calculateTotal()" />Yes</label><br/>
+                <label class='radiolabel'><input type="radio"  name="religion" value="religion_no" onclick="calculateTotal()" />No</label><br/>
+
+                <label >Are you married?</label>
+                <label class='radiolabel'><input type="radio"  name="married" value="married_yes" onclick="calculateTotal()" />Yes</label><br/>
+                <label class='radiolabel'><input type="radio"  name="married" value="married_no" onclick="calculateTotal()" />No</label><br/>
+
+                <label >Are you or any of your parents born outside Germany?</label>
+                <label class='radiolabel'><input type="radio"  name="migration" value="migration_yes" onclick="calculateTotal()" />Yes</label><br/>
+                <label class='radiolabel'><input type="radio"  name="migration" value="migration_no" onclick="calculateTotal()" />No</label><br/>                
+
+                <label >What best describes the area where you live?</label>
+                <label class='radiolabel'><input type="radio"  name="city" value="city_yes" onclick="calculateTotal()" />In a big city or suburb of a big city</label><br/>
+                <label class='radiolabel'><input type="radio"  name="city" value="city_no" onclick="calculateTotal()" />In a small city, town or village</label><br/> 
+
+
+                <label >What is more likely to be true about your net income?</label>
+                <label class='radiolabel'><input type="radio"  name="income" value="top" onclick="calculateTotal()" />My net income is in the top 50% in Germany</label><br/>
+                <label class='radiolabel'><input type="radio"  name="income" value="bottom" onclick="calculateTotal()" />My net income is in the bottom 50% in Germany</label><br/>          
+
                 <br/>
 
-                <label >What is your age?</label>
-                <label class='radiolabel'><input type="radio"  name="age" value="below" onclick="calculateTotal()" />Below 35 yrs old</label><br/>
-                <label class='radiolabel'><input type="radio"  name="age" value="above" onclick="calculateTotal()" />Above 35 yrs old</label><br/>
-  
-                
-                <div id="totalPrice"></div>
-                
+                <div id="totalPrice"></div>                
                 </fieldset>
             </div>
         </div>  
