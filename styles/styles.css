@@ -13,11 +13,11 @@ body {
 }
 
 .bar {
-  fill: #4682B4;
+  fill:#3fcfc3;
 }
 
 .bar:hover {
-  fill: darkred ;
+  fill: pink;
 }
 
 .x.axis path {
@@ -27,8 +27,8 @@ body {
 .d3-tip {
   line-height: 1;
   font-weight: bold;
-  padding: 13px;
-  font-size: 13px;
+  padding: 9px;
+  font-size: 9px;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   border-radius: 2px;
@@ -42,7 +42,7 @@ body {
   font-size: 10px;
   width: 100%;
   line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(317, 63, 53, 0.68);
   content: "\25BC";
   position: absolute;
   text-align: center;
