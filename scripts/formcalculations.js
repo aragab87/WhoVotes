@@ -1,3 +1,5 @@
+// This java script runs the quiz.
+
 /*
 This source is shared under the terms of LGPL 3
 www.gnu.org/licenses/lgpl.html
@@ -5,11 +7,8 @@ www.gnu.org/licenses/lgpl.html
 You are free to use the code in Commercial or non-commercial projects
 */
 
-
-
-//Set up an associative array
-//The keys represent the size of the cake
-//The values represent the cost of the cake i.e A 10" cake cost's $35
+//Set up an associative array, the keys represent the dummy category names, 
+//the values the estimated coefficients
 var gender_coe = new Array();
 gender_coe["male"]=3.8;
 gender_coe["female"]=0;
@@ -45,35 +44,33 @@ income_coe["bottom"]=0;
 //NOTE: taking two parameters instead of one here is inefficient as I could
 //      theoretically generate one from the other, but this was faster for me to do
 	 
-// getCakeSizePrice() finds the price based on the size of the cake.
+// getCoefficientValue() finds the coefficient value based on the dummy category of the cake.
 // Here, we need to take user's the selection from radio button selection
-function getCakeSizePrice(cha, coe)
+function getCoefficientValue(cha, coe)
 {  
-    var cakeSizePrice=0;
+    var coefficientValue=0;
     //Get a reference to the form id="cakeform"
     var theForm = document.forms["cakeform"];
-    //Get a reference to the cake the user Chooses name=selectedCake":
-    var selectedCake = theForm.elements[cha];
-    //Here since there are 4 radio buttons selectedCake.length = 4
+    //Get a reference to the category the user Chooses name=selectedDummyCategory":
+    var selectedDummyCategory = theForm.elements[cha];
+    //Here since there are 4 radio buttons selectedDummyCategory.length = 4
     //We loop through each radio buttons
-    for(var i = 0; i < selectedCake.length; i++)
+    for(var i = 0; i < selectedDummyCategory.length; i++)
     {
         //if the radio button is checked
-        if(selectedCake[i].checked)
+        if(selectedDummyCategory[i].checked)
         {
-            //we set cakeSizePrice to the value of the selected radio button
-            //i.e. if the user choose the 8" cake we set it to 25
+            //we set coefficientValue to the value of the selected radio button
             //by using the cake_prices array
             //We get the selected Items value
-            //For example cake_prices["Round8".value]"
-            cakeSizePrice = coe[selectedCake[i].value];
+            coefficientValue = coe[selectedDummyCategory[i].value];
             //If we get a match then we break out of this loop
             //No reason to continue if we get a match
             break;
         }
     }
-    //We return the cakeSizePrice
-    return cakeSizePrice;
+    //We return the coefficientValue
+    return coefficientValue;
 }
 
 // probabiity below 0 doesn't exist, show zero in that case
@@ -96,23 +93,23 @@ function calculateTotal()
     //Each function returns a number so by calling them we add the values they return together
     
     // summing the coefficients if dummy is 1; also adding intercept
-    var cakePrice_raw = getCakeSizePrice("gender", gender_coe) 
-                    + getCakeSizePrice("age", age_coe) 
-                    + getCakeSizePrice("college", college_coe)
-                    + getCakeSizePrice("religion", religion_coe)
-                    + getCakeSizePrice("married", married_coe)
-                    + getCakeSizePrice("migration", migration_coe)
-                    + getCakeSizePrice("city", city_coe)
-                    + getCakeSizePrice("income", income_coe)
+    var totalProb_raw = getCoefficientValue("gender", gender_coe) 
+                    + getCoefficientValue("age", age_coe) 
+                    + getCoefficientValue("college", college_coe)
+                    + getCoefficientValue("religion", religion_coe)
+                    + getCoefficientValue("married", married_coe)
+                    + getCoefficientValue("migration", migration_coe)
+                    + getCoefficientValue("city", city_coe)
+                    + getCoefficientValue("income", income_coe)
                     + 5.9
                     ;
 
-    var cakePrice = showZeroIfNegative(cakePrice_raw)
+    var totalProb = showZeroIfNegative(totalProb_raw)
     
     //display the result
     var divobj = document.getElementById('totalPriceFooter');
     divobj.style.display='block';
-    divobj.innerHTML = "The likelihood of a voter like you reporting to vote for the AfD is <br/> <span style='font-size: 20px'> <span style='background-color: red'>" + d3.format(".1f")(cakePrice) + "%. </span> </span>";
+    divobj.innerHTML = "The likelihood of a voter like you reporting to vote for the AfD is <br/> <span style='font-size: 20px'> <span style='background-color: red'>" + d3.format(".1f")(totalProb) + "%. </span> </span>";
 
 
 
