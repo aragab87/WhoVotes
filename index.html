@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<title>WhoVotes</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles/template.css">
-<link rel="stylesheet" href="styles/theme-black.css">
-<link rel="stylesheet" href="styles/fonts.css">
-<link rel="stylesheet" type="text/css" href="styles/styles.css">
-<link href="styles/quizform.css" rel="stylesheet" type="text/css" />
+
+
+<head>
+  <html lang="en">
+  <title>WhoVotes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/template.css">
+  <link rel="stylesheet" href="styles/theme-black.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <link href="styles/quizform.css" rel="stylesheet" type="text/css" /> 
+</head>
 
 <body>
 
@@ -46,17 +50,18 @@
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-black"> Determinants of Right Wing Populist Vote </h1>
       <p>This meteoric rise was driven by a particular type of voter. This voter is likely never to have attended college, more likely to be male and to profess not to be religious. This voter is also much more likely to be living in the former communist GDR, Eastern Germany, where the AfD has often achieved results close to 20-20% in regional elections. <BR/>
+      <div id ="anchor-tweet-education-determinant-of-right-wing-voting">
       <div id="link-to-quiz">
         <a href="calculator.html"> Are you likely to be an AfD voter? Take our quiz to find out. </a>
        
       </div>
       </p>
-
       <p> <z> Education is the strongest predictor of far-right voting in Germany</z> <br>Having a high school degree or less had the biggest effect on the predicted probability of voting for the AfD in the German 2017 national election</br></p>
       <div id ="bar-chart-container"> </div>
       <figure-caption> Predictors were estimated in an OLS regression using a representative sample of 1860 voters. A correct interpretation of these results would be to say that, for example, being male is correlated with a 3.8 percentage points higher probability in voting for the AfD holding all other demographic characteristics equal. <a href="data.html">Please note, however, that we find evidence of serious underreporting of voting for the AfD.</a> Migration background is defined as being born outside Germany or having at least one parent born outside Germany. Robustness checks using logit transformations yielded qualitatively the same results. Sampling weights were applied as per the survey documentation. </figure-caption>
       <h6>Source: <a href="https://www.europeansocialsurvey.org/about/">European Social Survey</a></h6>
       <h6> Resources: <a href="https://github.com/aragab87/WhoVotes/blob/master/clean_code/02_clean_for_base_model_demographics_germany_18.R">Cleaning Code</a> , <a href="https://github.com/aragab87/WhoVotes/blob/master/analysis_code/01_germany_18_demographics_base_model.R">Analysis Code</a> , <a href="http://bl.ocks.org/Caged/6476579">Template</a> </h6>
+      </div>
 
       <iframe title="Alternative For Germany (AfD) State Election Results&amp;nbsp;" aria-label="Table" id="datawrapper-chart-cFFg8" src="//datawrapper.dwcdn.net/cFFg8/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="828"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();</script>
     </div>
