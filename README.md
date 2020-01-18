@@ -27,9 +27,9 @@ This project was developed by Harvard Kennedy School students as part of their c
 
 ### Contact
 
-Siddhant Gokhale, MPA/ID 2021 Candidate
-Lucas Kitzmüller, MPA/ID 2021 Candidate
-Ahmed Ragab, MPA 2021 Candidate (ahmedragab@hks.harvard.edu)
+* Siddhant Gokhale, MPA/ID 2021 Candidate
+* Lucas Kitzmüller, MPA/ID 2021 Candidate
+* Ahmed Ragab, MPA 2021 Candidate (ahmedragab@hks.harvard.edu)
 
 
 
