@@ -1,0 +1,4 @@
+This folder contains the transformed data that has been cleaned and then analyzed..
+This was created by R scripts in the clean_code and analysis_code folders.  
+
+Original Data was from the European Social Survey. It can be accessed via free registration. We are not allowed to share it in public. We have however shared the data in its original form on the Dropbox to dhrumil_mehta@hks.harvard.edu. 
