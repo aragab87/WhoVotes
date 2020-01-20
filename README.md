@@ -16,7 +16,8 @@ This project was developed by Harvard Kennedy School students as part of their c
 * research: files synthesizing acaddemic literature on right wing populism
 * scripts: javascript code for websites (in particular, d3 visualization and quiz predicting whether you are a right wing voter)
 * styles: css stylesheet for websites
-* output: graphs and regression results output from R
+* clean_data: time trend and regression results data from R. A note on data storage. 
+* output: graphs from R
 * website: word document drafts of website
 * Burn chart sprints ...: Excel sheet with burn chart
 * RightWingPartyElectionResults for map.xlsx: Data for Europe map with election results
